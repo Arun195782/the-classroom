@@ -123,13 +123,123 @@
 
         /* Mobile view */
         @media (max-width: 650px) {
+            .top-header {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 12px;
+                padding: 16px 12px;
+            }
+
+            .logo {
+                font-size: 22px;
+                white-space: nowrap;
+            }
+
+            .top-header nav {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .top-header nav a {
+                margin-left: 0;
+                font-size: 15px;
+            }
+
+            .layout {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                min-height: calc(100vh - 110px);
+            }
+
             .sidebar {
-                width: 190px;
+                width: 100%;
+                max-height: none;
+                overflow: visible;
+                flex-shrink: 0;
+                padding-bottom: 0;
+            }
+
+            .sidebar h3 {
+                display: none;
+            }
+
+            .sidebar .sidebar-toggle {
+                display: block;
+                width: 100%;
+                padding: 15px 18px;
+                border: 0;
+                background: #e9edf2;
+                color: #17365d;
+                text-align: left;
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            .sidebar.mobile-collapsed .module-button,
+            .sidebar.mobile-collapsed .lecture-list {
+                display: none !important;
+            }
+
+            .sidebar:not(.mobile-collapsed) .module-button {
+                display: block;
             }
 
             .content {
-                padding: 15px;
+                width: 100%;
+                min-width: 0;
+                padding: 20px 16px;
+                overflow: visible;
             }
+
+            .content h1 {
+                font-size: 25px;
+                line-height: 1.25;
+                overflow-wrap: anywhere;
+            }
+
+            .content p {
+                line-height: 1.5;
+            }
+
+            .welcome {
+                margin-top: 24px;
+            }
+
+            .video-container {
+                width: 100%;
+                max-width: 100%;
+                margin: 12px 0 18px;
+            }
+
+            .lecture-navigation {
+                width: 100%;
+                gap: 10px;
+                margin: 20px 0 28px;
+                padding-top: 16px;
+            }
+
+            .lecture-navigation button {
+                flex: 1;
+                min-width: 0;
+                padding: 11px 8px;
+                font-size: 14px;
+            }
+
+            .material-card {
+                width: 100%;
+                padding: 16px;
+                overflow-wrap: anywhere;
+            }
+        }
+
+        /* The mobile Course Contents toggle is hidden on desktop */
+        .sidebar-toggle {
+            display: none;
         }
 
 /* Lecture content styling */
@@ -276,9 +386,12 @@
 <div class="layout">
 
     <!-- LEFT SIDEBAR -->
-    <aside class="sidebar">
+    <aside class="sidebar mobile-collapsed" id="courseSidebar">
 
         <h3>Course Contents</h3>
+        <button class="sidebar-toggle" onclick="toggleSidebar()" aria-expanded="false">
+            ☰ Course Contents <span id="sidebarArrow">▼</span>
+        </button>
 
         <button class="module-button" onclick="toggleModule(1)">
             Module 1: Introduction to C++ ▼
@@ -385,6 +498,30 @@
     
 let currentLectureIndex = -1;
 
+function toggleSidebar() {
+    const sidebar = document.getElementById("courseSidebar");
+    const toggleButton = document.querySelector(".sidebar-toggle");
+    const arrow = document.getElementById("sidebarArrow");
+
+    sidebar.classList.toggle("mobile-collapsed");
+
+    const isOpen = !sidebar.classList.contains("mobile-collapsed");
+    toggleButton.setAttribute("aria-expanded", isOpen);
+    arrow.textContent = isOpen ? "▲" : "▼";
+}
+
+function closeSidebarOnMobile() {
+    if (window.matchMedia("(max-width: 650px)").matches) {
+        const sidebar = document.getElementById("courseSidebar");
+        const toggleButton = document.querySelector(".sidebar-toggle");
+        const arrow = document.getElementById("sidebarArrow");
+
+        sidebar.classList.add("mobile-collapsed");
+        toggleButton.setAttribute("aria-expanded", "false");
+        arrow.textContent = "▼";
+    }
+}
+
 function toggleModule(number) {
 
     const module = document.getElementById("module" + number);
@@ -411,6 +548,7 @@ function openLecture(moduleNumber, lectureNumber, button) {
     button.classList.add("active");
 
     showLectureContent(button.textContent);
+    closeSidebarOnMobile();
 }
 
 
