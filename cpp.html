@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TACSE205 - The Classroom</title>
+    <title>Object-Oriented Programming with C++ | The Classroom</title>
 
     <style>
         * {
@@ -387,104 +387,85 @@
 
     <!-- LEFT SIDEBAR -->
     <aside class="sidebar mobile-collapsed" id="courseSidebar">
-
         <h3>Course Contents</h3>
         <button class="sidebar-toggle" onclick="toggleSidebar()" aria-expanded="false">
             ☰ Course Contents <span id="sidebarArrow">▼</span>
         </button>
 
-        <button class="module-button" onclick="toggleModule(1)">
-            Module 1: Introduction to C++ ▼
-        </button>
-
+        <button class="module-button" onclick="toggleModule(1)">Module 1: Introduction to OOPs ▼</button>
         <div class="lecture-list" id="module1">
-            <button onclick="openLecture(1, 1, this)">Lecture 1: Introduction to C++</button>
-            <button onclick="openLecture(1, 2, this)">Lecture 2: Structure of a C++ Program</button>
-            <button onclick="openLecture(1, 3, this)">Lecture 3: Data Types and Variables</button>
-            <button onclick="openLecture(1, 4, this)">Lecture 4: Input and Output Streams</button>
-            <button onclick="openLecture(1, 5, this)">Lecture 5: Control Statements and Loops</button>
-            <button onclick="openLecture(1, 6, this)">Lecture 6: Functions in C++</button>
-            <button onclick="openLecture(1, 7, this)">Lecture 7: Function Overloading</button>
-            <button onclick="openLecture(1, 8, this)">Lecture 8: Default Arguments and Inline Functions</button>
-            <button onclick="openLecture(1, 9, this)">Lecture 9: Classes and Objects</button>
+            <button onclick="openLecture(1, 1, this)">Lecture 1: Introduction to Object-Oriented Programming</button>
+            <button onclick="openLecture(1, 2, this)">Lecture 2: Applications of OOP and C++</button>
+            <button onclick="openLecture(1, 3, this)">Lecture 3: Structure of a C++ Program</button>
+            <button onclick="openLecture(1, 4, this)">Lecture 4: Tokens and Expressions</button>
+            <button onclick="openLecture(1, 5, this)">Lecture 5: Control Structures</button>
+            <button onclick="openLecture(1, 6, this)">Lecture 6: Functions in C++ and the Main Function</button>
+            <button onclick="openLecture(1, 7, this)">Lecture 7: Function Prototyping</button>
+            <button onclick="openLecture(1, 8, this)">Lecture 8: Call by Reference and Return by Reference</button>
+            <button onclick="openLecture(1, 9, this)">Lecture 9: Inline Functions and Default Arguments</button>
         </div>
 
-        <button class="module-button" onclick="toggleModule(2)">
-            Module 2: Classes and Objects ▼
-        </button>
-
+        <button class="module-button" onclick="toggleModule(2)">Module 2: Classes and Objects ▼</button>
         <div class="lecture-list" id="module2">
             <button onclick="openLecture(2, 1, this)">Lecture 10: Defining Classes and Objects</button>
-            <button onclick="openLecture(2, 2, this)">Lecture 11: Access Specifiers</button>
-            <button onclick="openLecture(2, 3, this)">Lecture 12: Member Functions</button>
-            <button onclick="openLecture(2, 4, this)">Lecture 13: Static Members</button>
-            <button onclick="openLecture(2, 5, this)">Lecture 14: Constructors</button>
-            <button onclick="openLecture(2, 6, this)">Lecture 15: Types of Constructors</button>
-            <button onclick="openLecture(2, 7, this)">Lecture 16: Copy Constructors</button>
-            <button onclick="openLecture(2, 8, this)">Lecture 17: Destructors</button>
-            <button onclick="openLecture(2, 9, this)">Lecture 18: Friend Functions and Classes</button>
+            <button onclick="openLecture(2, 2, this)">Lecture 11: Data Members and Member Functions</button>
+            <button onclick="openLecture(2, 3, this)">Lecture 12: Inline Member Functions</button>
+            <button onclick="openLecture(2, 4, this)">Lecture 13: Constructors</button>
+            <button onclick="openLecture(2, 5, this)">Lecture 14: Types of Constructors</button>
+            <button onclick="openLecture(2, 6, this)">Lecture 15: Constructors with Default Arguments</button>
+            <button onclick="openLecture(2, 7, this)">Lecture 16: Destructors</button>
+            <button onclick="openLecture(2, 8, this)">Lecture 17: Static Data Members and Static Member Functions</button>
+            <button onclick="openLecture(2, 9, this)">Lecture 18: Friend Functions, Arrays of Objects and Object Arguments</button>
         </div>
 
-        <button class="module-button" onclick="toggleModule(3)">
-            Module 3: Operator Overloading and Inheritance ▼
-        </button>
-
+        <button class="module-button" onclick="toggleModule(3)">Module 3: Function and Operator Overloading ▼</button>
         <div class="lecture-list" id="module3">
-            <button onclick="openLecture(3, 1, this)">Lecture 19: Operator Overloading</button>
-            <button onclick="openLecture(3, 2, this)">Lecture 20: Unary Operator Overloading</button>
-            <button onclick="openLecture(3, 3, this)">Lecture 21: Binary Operator Overloading</button>
-            <button onclick="openLecture(3, 4, this)">Lecture 22: Friend Function Overloading</button>
-            <button onclick="openLecture(3, 5, this)">Lecture 23: Introduction to Inheritance</button>
-            <button onclick="openLecture(3, 6, this)">Lecture 24: Types of Inheritance</button>
-            <button onclick="openLecture(3, 7, this)">Lecture 25: Multilevel and Multiple Inheritance</button>
-            <button onclick="openLecture(3, 8, this)">Lecture 26: Hierarchical and Hybrid Inheritance</button>
-            <button onclick="openLecture(3, 9, this)">Lecture 27: Constructors in Inheritance</button>
+            <button onclick="openLecture(3, 1, this)">Lecture 19: Function Overloading</button>
+            <button onclick="openLecture(3, 2, this)">Lecture 20: Special Features of Function Overloading</button>
+            <button onclick="openLecture(3, 3, this)">Lecture 21: Constructor Overloading</button>
+            <button onclick="openLecture(3, 4, this)">Lecture 22: Rules for Operator Overloading</button>
+            <button onclick="openLecture(3, 5, this)">Lecture 23: Unary Operator Overloading</button>
+            <button onclick="openLecture(3, 6, this)">Lecture 24: Binary Operator Overloading</button>
+            <button onclick="openLecture(3, 7, this)">Lecture 25: Type Conversions</button>
+            <button onclick="openLecture(3, 8, this)">Lecture 26: Worked Examples on Overloading and Type Conversions</button>
         </div>
 
-        <button class="module-button" onclick="toggleModule(4)">
-            Module 4: Polymorphism ▼
-        </button>
-
+        <button class="module-button" onclick="toggleModule(4)">Module 4: Inheritance ▼</button>
         <div class="lecture-list" id="module4">
-            <button onclick="openLecture(4, 1, this)">Lecture 28: Introduction to Polymorphism</button>
-            <button onclick="openLecture(4, 2, this)">Lecture 29: Function Overriding</button>
-            <button onclick="openLecture(4, 3, this)">Lecture 30: Virtual Functions</button>
-            <button onclick="openLecture(4, 4, this)">Lecture 31: Pure Virtual Functions</button>
-            <button onclick="openLecture(4, 5, this)">Lecture 32: Abstract Classes</button>
-            <button onclick="openLecture(4, 6, this)">Lecture 33: Compile-time and Runtime Polymorphism</button>
-            <button onclick="openLecture(4, 7, this)">Lecture 34: Pointers to Objects</button>
-            <button onclick="openLecture(4, 8, this)">Lecture 35: Dynamic Memory Allocation</button>
-            <button onclick="openLecture(4, 9, this)">Lecture 36: Virtual Destructors</button>
+            <button onclick="openLecture(4, 1, this)">Lecture 27: Introduction to Inheritance</button>
+            <button onclick="openLecture(4, 2, this)">Lecture 28: Single Inheritance</button>
+            <button onclick="openLecture(4, 3, this)">Lecture 29: Visibility Modes in Inheritance</button>
+            <button onclick="openLecture(4, 4, this)">Lecture 30: Multilevel Inheritance</button>
+            <button onclick="openLecture(4, 5, this)">Lecture 31: Multiple Inheritance</button>
+            <button onclick="openLecture(4, 6, this)">Lecture 32: Hierarchical Inheritance</button>
+            <button onclick="openLecture(4, 7, this)">Lecture 33: Hybrid Inheritance</button>
+            <button onclick="openLecture(4, 8, this)">Lecture 34: Virtual Base Classes</button>
+            <button onclick="openLecture(4, 9, this)">Lecture 35: Abstract Classes</button>
+            <button onclick="openLecture(4, 10, this)">Lecture 36: Constructors in Derived Classes</button>
         </div>
 
-        <button class="module-button" onclick="toggleModule(5)">
-            Module 5: Templates and File Handling ▼
-        </button>
-
+        <button class="module-button" onclick="toggleModule(5)">Module 5: Pointers, Virtual Functions and File Handling ▼</button>
         <div class="lecture-list" id="module5">
-            <button onclick="openLecture(5, 1, this)">Lecture 37: Function Templates</button>
-            <button onclick="openLecture(5, 2, this)">Lecture 38: Class Templates</button>
-            <button onclick="openLecture(5, 3, this)">Lecture 39: Exception Handling</button>
-            <button onclick="openLecture(5, 4, this)">Lecture 40: Try, Catch and Throw</button>
-            <button onclick="openLecture(5, 5, this)">Lecture 41: Multiple Catch Blocks</button>
-            <button onclick="openLecture(5, 6, this)">Lecture 42: Introduction to File Handling</button>
-            <button onclick="openLecture(5, 7, this)">Lecture 43: Reading and Writing Files</button>
-            <button onclick="openLecture(5, 8, this)">Lecture 44: Random Access in Files</button>
-            <button onclick="openLecture(5, 9, this)">Lecture 45: Introduction to STL</button>
+            <button onclick="openLecture(5, 1, this)">Lecture 37: Pointers in C++</button>
+            <button onclick="openLecture(5, 2, this)">Lecture 38: Pointers to Objects and the this Pointer</button>
+            <button onclick="openLecture(5, 3, this)">Lecture 39: Pointers to Derived Classes</button>
+            <button onclick="openLecture(5, 4, this)">Lecture 40: Virtual Functions</button>
+            <button onclick="openLecture(5, 5, this)">Lecture 41: Pure Virtual Functions</button>
+            <button onclick="openLecture(5, 6, this)">Lecture 42: File Stream Classes, Opening and Closing Files</button>
+            <button onclick="openLecture(5, 7, this)">Lecture 43: Detecting End-of-File, Reading and Writing Files</button>
         </div>
-
     </aside>
 
     <!-- RIGHT CONTENT AREA -->
     <main class="content" id="mainContent">
 
-        <h1>Welcome to TACSE205</h1>
+        <h1>Object-Oriented Programming with C++</h1>
 
         <p>Object Oriented Programming with C++</p>
 
         <div class="welcome">
             <h2>Course Overview</h2>
-            <p>This course contains five modules and 45 lectures.</p>
+            <p>This course covers five modules and 43 lectures.</p>
             <p>Select a module from the left panel to explore its lectures.</p>
             <p>Select any lecture to view its learning materials here.</p>
         </div>
@@ -568,7 +549,7 @@ function showLectureContent(title) {
         <div class="video-container">
             <iframe
                 src="https://www.youtube.com/embed/jNQXAC9IVRw"
-                title="Sample C++ Lecture Video"
+                title="C++ Lecture Video"
                 allowfullscreen>
             </iframe>
         </div>
@@ -581,7 +562,7 @@ function showLectureContent(title) {
             </button>
 
             <button onclick="moveLecture(1)"
-                ${currentLectureIndex === 44 ? "disabled" : ""}>
+                ${currentLectureIndex === 42 ? "disabled" : ""}>
                 Next Lecture →
             </button>
 
