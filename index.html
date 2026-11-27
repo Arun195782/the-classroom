@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Classroom</title>
-
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#17365d">
     <style>
         body {
             margin: 0;
@@ -232,6 +233,14 @@ nav a:hover {
     <footer>
         <p>The Classroom | Learning Resources</p>
     </footer>
-
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("./service-worker.js")
+        .then(() => console.log("The Classroom app is ready."))
+        .catch((error) => console.error("App setup failed:", error));
+    });
+  }
+</script>
 </body>
 </html>
